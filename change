@@ -1,0 +1,73 @@
+java中的数据类型占的字节数固定
+
+   double f = 50.0    50.0  默认为double类型
+   若为float  50.0后需加 f
+
+  JAVA的标识符由字母、数字、下划线、美元符组成，不能以数字开头，建议用字母开头
+
+  常量名全部大写  用final定义常量
+
+  char占两个字节  
+
+  增强型for循环   for(类型  变量名 ：数组)  变量名是自己定义的  相当于中间变量
+
+
+定义数组  需要对其进行初始化  否则并未给其分配内存   int []arr = new arr() 
+
+ 如果只有 int[]arr  则只是一个空的内存 里面需要存储所要开辟的数组的首地址
+
+  数组的方法   copyOF实现数组的复制  Fill实现数组元素的初始化   Sort 实现数组的排序
+
+  类的实例化  Student A = new Student（）；
+  
+   静态的方法中没有this
+
+   函数的重载  函数名相同 参数不同       
+    返回值不能作为重载依据   是否为静态也不能作为重载依据   重载的方法直接可以互相调用
+
+ 父类的private不能被子类继承使用  只能看不能用
+
+ string 类是final 修饰的终极类 不能被继承
+ final修饰的方法  只能被继承 不能被重写
+ 
+  向上转型	将父类对象指向子类  能继续调用子类的方法  体现了类的多态  父类会遗失父类中没有的方法  因为父类的大小是确定的
+
+   向下转型   在把父类对象 指向子类的前提下 可以把子类对象 指向  之前的父类对象。 A a = new B（）
+B b =  （B）a   否则会出错
+
+   子类重写父类的方法，访问权限不能更低
+
+    内部类    匿名内部类
+
+    容器和泛型
+    
+     List（可以存重复） set（无序，不能存重复） queue
+
+    流  文件操作
+
+    字符串解析
+
+    线程多线程
+
+    socket 编程
+
+     substring[0,5)
+     stringbuffer与string区别              stringbulider   StringTokenizer
+
+     反射
+     class类  类的实例表示正在运行的 Java 应用程序中的类和接口
+     Field：提供有关类或接口的属性的信息，以及对它的动态访问权限
+       Constructor：提供关于类的单个构造方法的信息以及对它的访问权限
+	Method：提供关于类或接口上单独某个方法的信息
+
+      创建JDBC
+     1.加载数据库的驱动程序（前提首先引入数据库驱动的jar包）
+Class.forName(“driverName”);
+     2.建立数据库连接
+String connStr = “jdbc:<JDBC驱动程序名：端口号>:数据源”
+Connection  conn=DriverManager.getConnection（connStr，登录名，密码）;
+     3.执行数据库操作SQL
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery(sql);
+      4.关闭数据库连接
+conn.close();
